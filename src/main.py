@@ -21,6 +21,8 @@ def main():
         parser = HTMLParser(html_content)
         links = parser.extract_links()
         
+        #Fiquei na duvida em salvar os nomes de forma original, ou como Anexo 1 ou Anexo 2 por isso deixei as duas opções, basta alternar o comentario entre as linhas abaixo.
+        #filenames = [os.path.join(data_dir, os.path.basename(link)) for link in links]
         filenames = [os.path.join(data_dir, f"Anexo_{i+1}.pdf") for i in range(len(links))]
 
         # Baixa os arquivos
