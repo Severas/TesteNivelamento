@@ -3,6 +3,7 @@ import requests
 class FileDownloader:
     @staticmethod
     def download_file(url, filename):
+        """Baixa arquivo"""
         with requests.get(url, stream = True, timeout = 10) as response:
             response.raise_for_status()
             with open(filename, 'wb') as file:
